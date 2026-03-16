@@ -116,8 +116,12 @@ function listarLivro() {
             let acoesHtml = '';
             if (papel === 'admin') {
                 acoesHtml = `
-                    <button onclick="prepararEdicao(${livro.id})">Editar</button>
-                    <button onclick="deletarLivro(${livro.id})">Excluir</button>
+                    <button class="btn-tabela btn-editar" onclick="prepararEdicao(${livro.id})">Editar</button>
+                    <button class="btn-tabela btn-excluir" onclick="deletarLivro(${livro.id})">Excluir</button>
+                `;
+            } else if (papel === 'usuario') {
+                acoesHtml = `
+                    <button class="btn-tabela btn-editar" onclick="prepararEdicao(${livro.id})">Editar</button>
                 `;
             }
             tabela.innerHTML += `
